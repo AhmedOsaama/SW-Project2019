@@ -27,6 +27,7 @@ public class User {
             if (U == user) return;
         }
         friends.add(user);
+        user.friends.add(this);
     }
 
     public void setUsername(String username) {
@@ -41,6 +42,9 @@ public class User {
         this.profile = profile;
     }
 
+    public String getUsername(){
+        return this.username;
+    }
     public Profile getProfile() {
         return profile;
     }
