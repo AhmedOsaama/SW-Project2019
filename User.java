@@ -4,7 +4,7 @@ public class User {
     private String username;
     private String password;
     private Profile profile;
-    ArrayList<User> friends;
+    ArrayList<User> friends , friend_requests;
 
     public void showInfo() {
         System.out.println(username);
@@ -22,12 +22,19 @@ public class User {
 
     }
 
-    public void AddFriend(User user) {
-        for (User U : friends) {
-            if (U == user) return;
-        }
-        friends.add(user);
-        user.friends.add(this);
+    void send_friend_request(User u) {
+        u.friend_requests.add(this);
+    }
+
+    void accept_friend_request(User u) {
+        friends.add(u);
+        u.friends.add(this);
+        friend_requests.remove(u);
+    }
+
+    void show_friend_requests() {
+        for (User u : friend_requests)
+            System.out.println(u.username);
     }
 
     public void setUsername(String username) {
