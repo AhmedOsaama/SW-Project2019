@@ -5,10 +5,20 @@ public class User {
     private String password;
     private Profile profile;
     ArrayList<User> friends , friend_requests;
+    public static ArrayList<User> users = new ArrayList<>();      //ArrayList to store registered users.
+
 
     public void showInfo() {
         System.out.println(username);
         System.out.println(password);
+    }
+    public User findUser(ArrayList<User> users, String username,String password) {
+        for (User U : users) {
+            if (username.equals(U.getUsername()) && password.equals(U.getPassword())) {
+                return U;
+            }
+        }
+        return null;
     }
 
     public void changePrivacy() {
@@ -51,6 +61,9 @@ public class User {
 
     public String getUsername(){
         return this.username;
+    }
+    public String getPassword(){
+        return this.password;
     }
     public Profile getProfile() {
         return profile;
