@@ -14,9 +14,8 @@ public class Main {
             if (in == 1)         //Register
             {
                 Registration registration = new Registration();
-                registration.register();
+                userr = registration.register();
 
-                userr = Registration.user;
                 User.users.add(userr);
             }
             else if(in==2)      //Login

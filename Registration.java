@@ -10,9 +10,9 @@ public class Registration {
     private String country;
     private String dob;
 
-   public static User user = new User();
+   public static User user ;
 
-    public void register()
+    public User register()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please Enter your First name");
@@ -33,12 +33,13 @@ public class Registration {
         dob = scanner.nextLine();
         System.out.println("You have Created a new Account");
 
+        user = new User();
         user.setPassword(password);
         user.setUsername(username);
 
         user.setProfile(new Profile());
         user.getProfile().setName(username);
 
-
+        return user;
     }
 }
