@@ -3,34 +3,41 @@ import java.util.Scanner;
 
 public class Main {
 
-    public User FindUser(ArrayList<User> users, String username) {
-        for (User U : users) {
-            if (username.equals(U.getUsername())) {
-                return U;
-            }
-        }
-        return null;
-    }
-
     public static void main(String[] args) {
         User userr;
-        ArrayList<User> users = new ArrayList<>();      //ArrayList to store registered users.
         while (true) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("If you want to register Enter: 1, Login Enter: 2 or Exit Enter 0");
             int in = scanner.nextInt();
+            scanner.nextLine();
 
             if (in == 1)         //Register
             {
                 Registration registration = new Registration();
-                registration.register();
+                userr = registration.register();
 
-                userr = Registration.user;
-                users.add(userr);
-            } else if (in == 0)     //Exit
+                User.users.add(userr);
+            }
+            else if(in==2)      //Login
+            {
+                Login login = new Login();
+                userr = login.signIn();
+
+                if(userr!=null)
+                {
+                    System.out.println("You have logged in !");
+
+                }
+                else
+                    System.out.println("Invalid username or password");
+
+
+            }
+            else if (in == 0)     //Exit
             {
                 break;
             }
         }
+
     }
 }
