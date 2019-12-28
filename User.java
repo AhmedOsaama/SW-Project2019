@@ -12,7 +12,7 @@ public class User {
         System.out.println(username);
         System.out.println(password);
     }
-    public User findUser(ArrayList<User> users, String username,String password) {
+    public User findUser(String username,String password) {
         for (User U : users) {
             if (username.equals(U.getUsername()) && password.equals(U.getPassword())) {
                 return U;
