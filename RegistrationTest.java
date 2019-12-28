@@ -1,4 +1,4 @@
-import org.junit.Assert;
+/*import org.junit.Assert;
 import org.junit.Test;
 
 public class RegistrationTest {
@@ -10,6 +10,4 @@ public class RegistrationTest {
         System.out.println(user.getPassword());
     }
 
-
-
-}
+}*/
