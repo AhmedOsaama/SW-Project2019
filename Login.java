@@ -10,8 +10,7 @@ public class Login {
         System.out.println("Enter your password !");
         String password = scanner.nextLine();
         userr = new User();
-        userr = userr.findUser(User.users, username, password);
-
+        userr = userr.findUser(username, password);
         return userr;
     }
 }
